@@ -17,6 +17,7 @@ mentions:
     - aym-i
     - SmokeyStack
     - QuazChick
+    - Aevarkan
 ---
 
 ## What are add-ons?
@@ -26,7 +27,7 @@ Add-ons allow us to modify the contents of our Minecraft Experience by _modifyin
 Add-ons are primarily written in [json](/guide/understanding-json), which is a structured data-format. An add-on is essentially a collection of json files, images, and sounds, which modify or add to the game in some way.
 
 :::tip Scripting API
-Since this guide was written, the definition of 'Add-On' has expanded to include the Javascript scripting API. You can learn more about this API elsewhere on this site.
+Since this guide was written, the definition of 'Add-On' has expanded to include the Javascript scripting API. You can get started by going to our [_Intro to Scripting_](/scripting/scripting-intro) article.
 :::
 
 ## What's the difference between a Behavior Pack & a Resource Pack?
