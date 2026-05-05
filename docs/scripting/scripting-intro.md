@@ -12,15 +12,16 @@ mentions:
     - QuazChick
     - jeanmajid
     - AndroAGENT
+    - Aevarkan
 description: Learn how to modify your world through the use of JavaScript files.
 ---
 
 ::: tip
-This script API page assumes basic knowledge of pack setup for add-ons. For information on how to set up behavior packs, please see the [Introduction to Add-Ons](/guide/introduction) page.
+This script API page assumes basic knowledge of pack setup for add-ons. For information on how to set up behavior packs, please see the [_Introduction to Add-Ons_](/guide/introduction) page.
 :::
 
 ::: warning
-The Script API is currently in active development, and breaking changes are frequent. This page assumes the format of Minecraft 1.21.114.
+The Script API is currently in active development, and breaking changes are frequent. This page assumes the format of Minecraft 1.26.14.
 :::
 
 ## Overview
@@ -75,7 +76,7 @@ Additionally, dependencies will need to be set based on modules used. To import 
     // "capabilities": ["script_eval"],
     "dependencies": [
         {
-            // Enables the use of @minecraft/server module, with a version of 2.2.0 (the latest stable version available).
+            // Enables the use of @minecraft/server module, with a version of 2.6.0 (the latest stable version available).
             "module_name": "@minecraft/server",
             "version": "2.6.0"
         }
@@ -88,11 +89,11 @@ If your project needs other module to run your code, add the other dependencies 
 **Stable API modules**, these do not require the Beta APIs experiment to be turned on. Most features are included in stable APIs, and will not break or be changed when Minecraft is updated.
 
 -   `@minecraft/server`:
- 
+
     -   [`2.6.0`](https://www.npmjs.com/package/@minecraft/server/v/2.6.0) (Latest version)
-    -   [`2.5.0`](https://www.npmjs.com/package/@minecraft/server/v/2.5.0) 
-    -   [`2.4.0`](https://www.npmjs.com/package/@minecraft/server/v/2.4.0) 
-    -   [`2.3.0`](https://www.npmjs.com/package/@minecraft/server/v/2.3.0) 
+    -   [`2.5.0`](https://www.npmjs.com/package/@minecraft/server/v/2.5.0)
+    -   [`2.4.0`](https://www.npmjs.com/package/@minecraft/server/v/2.4.0)
+    -   [`2.3.0`](https://www.npmjs.com/package/@minecraft/server/v/2.3.0)
     -   [`2.2.0`](https://www.npmjs.com/package/@minecraft/server/v/2.2.0)
     -   [`2.1.0`](https://www.npmjs.com/package/@minecraft/server/v/2.1.0)
     -   [`2.0.0`](https://www.npmjs.com/package/@minecraft/server/v/2.0.0)
@@ -161,7 +162,7 @@ As of v1.21.120, you are now able to set the dependency `version` property to `"
 
 -   `@minecraft/server-ui`:
 
-    -   [`2.1.0-beta`](https://www.npmjs.com/package/@minecraft/server-ui/v/2.1.0-beta.1.21.114-stable) (1.21.114)
+    -   [`2.1.0-beta`](https://www.npmjs.com/package/@minecraft/server-ui/v/2.1.0-beta.1.26.14-stable) (1.26.14)
     -   [`2.0.0-beta`](https://www.npmjs.com/package/@minecraft/server-ui/v/2.0.0-beta.1.21.84-stable) (1.21.84)
     -   [`1.4.0-beta`](https://www.npmjs.com/package/@minecraft/server-ui/v/1.4.0-beta.1.21.62-stable) (1.21.62)
     -   [`1.3.0-beta`](https://www.npmjs.com/package/@minecraft/server-ui/v/1.3.0-beta.1.21.23-stable) (1.21.23)
@@ -171,19 +172,19 @@ As of v1.21.120, you are now able to set the dependency `version` property to `"
 
 -   `@minecraft/server-gametest`:
 
-    -   [`1.0.0-beta`](https://www.npmjs.com/package/@minecraft/server-gametest/v/1.0.0-beta.1.21.114-stable) (1.21.114)
+    -   [`1.0.0-beta`](https://www.npmjs.com/package/@minecraft/server-gametest/v/1.0.0-beta.1.26.14-stable) (1.26.14)
 
 -   `@minecraft/server-net`:
 
-    -   [`1.0.0-beta`](https://www.npmjs.com/package/@minecraft/server-net/v/1.0.0-beta.1.21.114-stable) (1.21.114; Bedrock Dedicated Server module only, must be enabled in `permission.json` as it is not enabled by default)
+    -   [`1.0.0-beta`](https://www.npmjs.com/package/@minecraft/server-net/v/1.0.0-beta.1.26.14-stable) (1.26.14; Bedrock Dedicated Server module only, must be enabled in `permission.json` as it is not enabled by default)
 
 -   `@minecraft/server-admin`:
 
-    -   [`1.0.0-beta`](https://www.npmjs.com/package/@minecraft/server-admin/v/1.0.0-beta.1.21.114-stable) (1.21.114; Bedrock Dedicated Server module only)
+    -   [`1.0.0-beta`](https://www.npmjs.com/package/@minecraft/server-admin/v/1.0.0-beta.1.26.14-stable) (1.26.14; Bedrock Dedicated Server module only)
 
 -   `@minecraft/debug-utilities`:
 
-    -   [`1.0.0-beta`](https://www.npmjs.com/package/@minecraft/debug-utilities/v/1.0.0-beta.1.21.114-stable) (1.21.114)
+    -   [`1.0.0-beta`](https://www.npmjs.com/package/@minecraft/debug-utilities/v/1.0.0-beta.1.26.14-stable) (1.26.14)
 
 In order to use the `eval()` function or `Function()` constructors within your code, you can add the following in the manifest capabilities:
 
@@ -264,12 +265,12 @@ These allow for enhanced auto-completions and validation when used inside of you
 Latest beta API modules:
 
 ```bash
-npm i @minecraft/server@2.3.0-beta.1.21.114-stable
-npm i @minecraft/server-ui@2.1.0-beta.1.21.114-stable
-npm i @minecraft/server-gametest@1.0.0-beta.1.21.114-stable
-npm i @minecraft/server-admin@1.0.0-beta.1.21.114-stable
-npm i @minecraft/server-net@1.0.0-beta.1.21.114-stable
-npm i @minecraft/debug-utilities@1.0.0-beta.1.21.114-stable
+npm i @minecraft/server@2.7.0-beta.1.26.14-stable
+npm i @minecraft/server-ui@2.1.0-beta.1.26.14-stable
+npm i @minecraft/server-gametest@1.0.0-beta.1.26.14-stable
+npm i @minecraft/server-admin@1.0.0-beta.1.26.14-stable
+npm i @minecraft/server-net@1.0.0-beta.1.26.14-stable
+npm i @minecraft/debug-utilities@1.0.0-beta.1.26.14-stable
 ```
 
 Latest stable API modules:
@@ -278,3 +279,9 @@ Latest stable API modules:
 npm i @minecraft/server
 npm i @minecraft/server-ui
 ```
+
+<!-- TODO: Add these!!! -->
+
+@minecraft/server-editor
+@minecraft/server-graphics
+@minecraft/diagnostics
